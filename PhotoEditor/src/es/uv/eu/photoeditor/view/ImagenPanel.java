@@ -5,6 +5,8 @@
  */
 package es.uv.eu.photoeditor.view;
 
+import es.uv.eu.photoeditor.model.PhotoEditorModel;
+import java.awt.Graphics;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import javax.swing.JPanel;
@@ -15,9 +17,11 @@ import javax.swing.JPanel;
  */
 public class ImagenPanel extends JPanel{
     private JPanel ipanel = new JPanel();
+    private PhotoEditorModel modelo;
     
-    public ImagenPanel(){
-        
+    
+    public ImagenPanel(PhotoEditorModel modelo){
+        this.modelo=modelo;
         this.add(ipanel);
     }
     
@@ -25,7 +29,11 @@ public class ImagenPanel extends JPanel{
         ipanel.addMouseListener(ml);
     }
     
-    public void mostrarImagen(BufferedImage imagen){
-        
+    public void paintComponent(Graphics g){
+        BufferedImage imagen;
+        imagen=modelo.getImagen();
+        if(imagen!=null){
+            g.drawImage(imagen,0,0,imagen.getWidth(), imagen.getHeight(), this);
+        }
     }
 }

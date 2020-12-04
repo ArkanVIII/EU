@@ -15,7 +15,7 @@ public class PhotoEditor {
      */
     public static void main(String[] args) {
         PhotoEditorModel model = new PhotoEditorModel();
-        PhotoEditorView view = new PhotoEditorView();
+        PhotoEditorView view = new PhotoEditorView(model);
         PhotoEditorController controlador = new PhotoEditorController(model, view);
         
         view.setVisible(true);

@@ -5,8 +5,10 @@
  */
 package es.uv.eu.photoeditor.view;
 
+import es.uv.eu.photoeditor.model.PhotoEditorModel;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
@@ -21,18 +23,20 @@ import javax.swing.event.ChangeListener;
  */
 public class PhotoEditorView extends JFrame {
     private PhotoEditorMenuBar menu;
+    private PhotoEditorModel modelo;
     private SelectPanel slp;
     private ImagenPanel ip;
     private StatusPanel stp;
     private Border border;
     
-    public PhotoEditorView(){
+    public PhotoEditorView(PhotoEditorModel modelo){
+        this.modelo=modelo;
         setLayout(new BorderLayout(5,5));
         setSize(900,700);
         
         menu = new PhotoEditorMenuBar();
         slp = new SelectPanel();
-        ip = new ImagenPanel();
+        ip = new ImagenPanel(modelo);
         stp = new StatusPanel();
         
         border = BorderFactory.createLineBorder (Color.LIGHT_GRAY,2);
@@ -68,10 +72,6 @@ public class PhotoEditorView extends JFrame {
     
     public void setGrosorLabel(String x){
         stp.setGrosorLabel(x);
-    }
-    
-    public void mostrarImagen(BufferedImage imagen){
-        ip.mostrarImagen(imagen);
     }
 }
 

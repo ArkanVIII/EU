@@ -9,12 +9,16 @@ import es.uv.eu.photoeditor.model.PhotoEditorModel;
 import es.uv.eu.photoeditor.view.LoadImage;
 import es.uv.eu.photoeditor.view.PhotoEditorView;
 import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 import javax.swing.JSlider;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -47,15 +51,27 @@ public class PhotoEditorController {
                     break;
                     
                 case "ItemCargar":
-                    LoadImage file = new LoadImage();
-                    File f=file.getFile();
-                    modelo.loadImagen(f);
-                    //modelo.pintaPoligono(poly, 0, Color.yellow, Color.yellow);
-                    //vista.
+                    LoadImage file1 = new LoadImage();
+                    File f1=file1.getFile();
+                    
+                    modelo.loadImagen(f1);
+                    vista.repaint();
                     break;
                 
                 case "ItemGuardar":
+                    /*try {
+                        File outputfile = new File("saved.jpg");
+                        ImageIO.write(modelo.getImagen(), "jpg", outputfile);
+                    } catch (IOException e) {
+                        // handle exception
+                    }*/
+                    LoadImage file2 = new LoadImage();
+                    File f2=file2.getFile();
+                    modelo.saveImagen(f2);
                     
+                    /*File f2=new File("Imagen.jpg");
+                    ImageIO.write(modelo.getImagen(), "jpg", f2);
+                    modelo.saveImagen(f2);*/
                     break;
                 
                 case "ItemAyuda":
