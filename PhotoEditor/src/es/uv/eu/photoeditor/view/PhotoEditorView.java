@@ -12,6 +12,7 @@ import java.awt.Graphics;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.border.Border;
@@ -49,6 +50,13 @@ public class PhotoEditorView extends JFrame {
         add(stp, BorderLayout.SOUTH);
     }
 
+    
+    public File getFile()
+    {
+        SaveImage si= new SaveImage();
+            return si.getFile();
+    }
+    
     public void addMiActionListener(ActionListener al) {
         menu.addMiActionListener(al);
         slp.addMiActionListener(al);

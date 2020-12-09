@@ -59,15 +59,18 @@ public class PhotoEditorController {
                     break;
                 
                 case "ItemGuardar":
+                    modelo.saveImagen(vista.getFile());
+                    
+                    
                     /*try {
                         File outputfile = new File("saved.jpg");
                         ImageIO.write(modelo.getImagen(), "jpg", outputfile);
                     } catch (IOException e) {
                         // handle exception
                     }*/
-                    LoadImage file2 = new LoadImage();
-                    File f2=file2.getFile();
-                    modelo.saveImagen(f2);
+                    //LoadImage file2 = new LoadImage();
+                    //File f2=file2.getFile();
+                    //modelo.saveImagen(f2);
                     
                     /*File f2=new File("Imagen.jpg");
                     ImageIO.write(modelo.getImagen(), "jpg", f2);
