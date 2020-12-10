@@ -5,6 +5,10 @@
  */
 package es.uv.eu.maestrodecolores;
 
+import es.uv.es.maestrodecolores.model.MaestroDeColoresModel;
+import es.uv.eu.maestrodecolores.controller.MaestroDeColoresController;
+import es.uv.eu.maestrodecolores.view.MaestroDeColoresView;
+
 /**
  *
  * @author sergv
@@ -15,7 +19,11 @@ public class MaestroDeColores {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        MaestroDeColoresModel model = new MaestroDeColoresModel();
+        MaestroDeColoresView view = new MaestroDeColoresView ();
+        MaestroDeColoresController controller = new MaestroDeColoresController();
+        
+        view.setVisible(true);
     }
     
 }

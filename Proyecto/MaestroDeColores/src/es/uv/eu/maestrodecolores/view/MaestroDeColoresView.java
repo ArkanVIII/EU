@@ -5,10 +5,12 @@
  */
 package es.uv.eu.maestrodecolores.view;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author sergv
  */
-public class MaestroDeColoresView {
+public class MaestroDeColoresView extends JFrame{
     
 }
