@@ -33,7 +33,7 @@ public class ImagenPanel extends JPanel{
         BufferedImage imagen;
         imagen=modelo.getImagen();
         if(imagen!=null){
-            g.drawImage(imagen,0,0,imagen.getWidth(), imagen.getHeight(), this);
+            g.drawImage(imagen,0,0, getWidth(), getHeight(), this);
         }
     }
 }

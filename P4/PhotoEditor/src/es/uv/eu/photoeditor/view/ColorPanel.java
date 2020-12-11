@@ -49,7 +49,6 @@ public class ColorPanel extends JPanel{
                 botones[i].setActionCommand(comando2[i]);
             
             this.add(botones[i]);
-            
         }
     }
     

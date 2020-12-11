@@ -60,21 +60,6 @@ public class PhotoEditorController {
                 
                 case "ItemGuardar":
                     modelo.saveImagen(vista.getFile());
-                    
-                    
-                    /*try {
-                        File outputfile = new File("saved.jpg");
-                        ImageIO.write(modelo.getImagen(), "jpg", outputfile);
-                    } catch (IOException e) {
-                        // handle exception
-                    }*/
-                    //LoadImage file2 = new LoadImage();
-                    //File f2=file2.getFile();
-                    //modelo.saveImagen(f2);
-                    
-                    /*File f2=new File("Imagen.jpg");
-                    ImageIO.write(modelo.getImagen(), "jpg", f2);
-                    modelo.saveImagen(f2);*/
                     break;
                 
                 case "ItemAyuda":
@@ -82,7 +67,7 @@ public class PhotoEditorController {
                     break;
                 
                 case "0"://Negro
-                case "1"://Cyan  
+                case "1"://Cyan
                 case "2"://Gris Oscuro
                 case "3"://Gris
                 case "4"://Gris Claro
@@ -111,7 +96,7 @@ public class PhotoEditorController {
                 case "24"://Azul
                 case "25"://Verde
                     vista.setColorLabelRelleno(command);
-                    break;    
+                    break;
             }
         }
     }
