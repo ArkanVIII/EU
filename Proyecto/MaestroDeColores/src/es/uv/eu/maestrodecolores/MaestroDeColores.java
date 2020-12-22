@@ -20,10 +20,10 @@ public class MaestroDeColores {
      */
     public static void main(String[] args) {
         MaestroDeColoresModel model = new MaestroDeColoresModel();
-        MaestroDeColoresView view = new MaestroDeColoresView ();
-        MaestroDeColoresController controller = new MaestroDeColoresController();
+        MaestroDeColoresView view = new MaestroDeColoresView();
+        MaestroDeColoresController controller = new MaestroDeColoresController(view,model);
         
-        view.setVisible(true);
+        //view.setVisible(true);
     }
     
 }

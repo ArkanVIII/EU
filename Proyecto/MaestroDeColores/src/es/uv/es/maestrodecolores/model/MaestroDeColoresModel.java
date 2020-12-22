@@ -11,4 +11,7 @@ package es.uv.es.maestrodecolores.model;
  */
 public class MaestroDeColoresModel {
     
+    public MaestroDeColoresModel(){
+        
+    }
 }
