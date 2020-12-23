@@ -17,6 +17,7 @@ public class MaestroDeColoresView extends JFrame{
     private MaestroP2 p2=new MaestroP2();
     public MaestroDeColoresView(){
         this.visualizarP1();
+        
     }
     
     public void addMiActionListener(ActionListener al){
@@ -25,8 +26,9 @@ public class MaestroDeColoresView extends JFrame{
     }
     
     public void visualizarP1(){
-        p1.setVisible(true);
         p2.setVisible(false);
+        p1.setVisible(true);
+        
     }
     public void visualizarP2(){
         p1.setVisible(false);
