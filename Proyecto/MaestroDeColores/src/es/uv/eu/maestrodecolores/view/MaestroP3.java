@@ -27,6 +27,7 @@ import javax.swing.JTextField;
  */
 public class MaestroP3 extends JFrame{
     private MaestroMenus menu;
+    private MaestroDeColoresView vista;
     Color Morado = new Color(153,51,255);
     Color MoradoOscuro = new Color(82,7,122);
     Color AzulOscuro = new Color(39,35,166);
@@ -63,7 +64,7 @@ public class MaestroP3 extends JFrame{
         pbotonesinf = new JPanel(new FlowLayout(FlowLayout.CENTER,10,45));
         
         titulo = new JLabel("Turno de Jugador 1", JLabel.CENTER);
-        titulo.setFont(new Font("Serif", Font.PLAIN, 35));
+        titulo.setFont(new Font("Serif", Font.PLAIN, 27));
         p.add(titulo);
         
         eligecol = new JLabel("Elige tu combinación colores: ", JLabel.CENTER);
@@ -74,16 +75,15 @@ public class MaestroP3 extends JFrame{
         color2 = new JButton();
         color3 = new JButton();
         color4 = new JButton();
-        color1.setPreferredSize(new Dimension(50,50));
-        color2.setPreferredSize(new Dimension(50,50));
-        color3.setPreferredSize(new Dimension(50,50));
-        color4.setPreferredSize(new Dimension(50,50));
+        color1.setPreferredSize(new Dimension(45,45));
+        color2.setPreferredSize(new Dimension(45,45));
+        color3.setPreferredSize(new Dimension(45,45));
+        color4.setPreferredSize(new Dimension(45,45));
         pbotones.add(color1);
         pbotones.add(color2);
         pbotones.add(color3);
         pbotones.add(color4);
         pcolores.add(pbotones);
-        
         
         col1 = new JComboBox(colores80); 
         col2 = new JComboBox(colores80);
@@ -108,7 +108,6 @@ public class MaestroP3 extends JFrame{
         pbotonesinf.add(reset);
         pbotonesinf.add(continuar);       
         
-        
         p.add(pcolores);
         p.add(pbotonesinf);
         
@@ -121,6 +120,10 @@ public class MaestroP3 extends JFrame{
            reset.addActionListener(al);
            volver.addActionListener(al);
            menu.addMiActionListener(al);
+    }
+    
+    public void setNombreJ1(String nombre){
+        titulo.setText("Turno de " + nombre);
     }
     
 }

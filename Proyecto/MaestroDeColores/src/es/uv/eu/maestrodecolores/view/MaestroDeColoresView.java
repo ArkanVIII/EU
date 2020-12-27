@@ -5,6 +5,7 @@
  */
 package es.uv.eu.maestrodecolores.view;
 
+import java.awt.Color;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 
@@ -42,7 +43,40 @@ public class MaestroDeColoresView extends JFrame{
         p3.setVisible(true);
     }
     
+    public void visualizarP2desdeP3(){
+        p3.setVisible(false);
+        p2.setVisible(true);
+    }
     
+    public void boton8select(){
+        p2.boton8select();
+    }
+    
+    public void boton12select(){
+        p2.boton12select();
+    }
+    
+    public void boton16select(){
+        p2.boton16select();
+    }
+    
+    public void boton5select(){
+        p2.boton5select();
+    }
+    
+    public void boton8selectint(){
+        p2.boton8selectint();
+    }
+    
+    public void boton10select(){
+        p2.boton10select();
+    }
+    
+    public void getNombreJ1(){
+        String nombre;
+        nombre=p2.getNombreJ1();
+        p3.setNombreJ1(nombre);
+    }
     
     
 }

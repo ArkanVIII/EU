@@ -33,18 +33,45 @@ public class MaestroDeColoresController {
                 case "Salir":
                     System.exit(0);
                     break;
-                    
+                // CAMBIOS DE PANTALLA CON LOS BOTONES    
                 case "VisualizarP2":
                     vista.visualizarP2();
                     break;
                     
+                case "VisualizarP2desdeP3":
+                    vista.visualizarP2desdeP3();
+                    break;
+                    
                 case "VisualizarP3":
                     vista.visualizarP3();
+                    vista.getNombreJ1();
                     break;
                     
                 case "VisualizarP1":
                     vista.visualizarP1();
                     break;
+                   
+                //CASOS PARA PINTAR DE ROJO LOS BOTONES SELECCIONADOS EN LOS AJUSTES DE LA PARTIDA
+                case "8":
+                    vista.boton8select();
+                    break;
+                case "12":
+                    vista.boton12select();
+                    break;
+                case "16":
+                    vista.boton16select();
+                    break;
+                case "5":
+                    vista.boton5select();
+                    break;
+                case "8.1":
+                    vista.boton8selectint();
+                    break;
+                case "10":
+                    vista.boton10select();
+                    break;
+                    
+                
             }
         }
     }
