@@ -36,9 +36,15 @@ public class MaestroDeColoresController {
                     
                 case "VisualizarP2":
                     vista.visualizarP2();
+                    break;
                     
-                //case "VisualizarP1":
-                    //vista.visualizarP1();
+                case "VisualizarP3":
+                    vista.visualizarP3();
+                    break;
+                    
+                case "VisualizarP1":
+                    vista.visualizarP1();
+                    break;
             }
         }
     }

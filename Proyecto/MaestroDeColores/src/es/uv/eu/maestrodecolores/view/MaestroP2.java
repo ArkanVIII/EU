@@ -32,12 +32,9 @@ public class MaestroP2 extends JFrame{
     private JButton[] botonesint= new JButton[3];
     private JLabel dif, col, inten, jug, nombrej1, nombrej2;
     private JTextField nombre1, nombre2;
-    private JButton volver, continuar;
+    private JButton volver, continuar1;
     private JPanel p, pdif, pdifcol, pdifint, pjug, pjugadores, pjugador1, pjugador2, pbotones;
-    
-    //private JPanel p, p1, p2, p3, ps1;
-    //private JLabel t;
-    //private JButton jj, jr, js;
+
     public MaestroP2(){
         this.setLayout(new BorderLayout());
         this.setBounds(650, 350, 600, 400);
@@ -125,12 +122,12 @@ public class MaestroP2 extends JFrame{
         volver = new JButton("Volver");
         volver.setPreferredSize(new Dimension(125,40));
         volver.setActionCommand("VisualizarP1");
-        continuar = new JButton("Continuar");
-        continuar.setPreferredSize(new Dimension(125,40));
-        continuar.setActionCommand("VisualizarP3");
+        continuar1 = new JButton("Continuar");
+        continuar1.setPreferredSize(new Dimension(125,40));
+        continuar1.setActionCommand("VisualizarP3");
         
         pbotones.add(volver);
-        pbotones.add(continuar);
+        pbotones.add(continuar1);
         p.add(pbotones);    
        
         this.add(p, BorderLayout.CENTER);
@@ -138,7 +135,7 @@ public class MaestroP2 extends JFrame{
         this.add(menu, BorderLayout.NORTH);
     }
     public void addMiActionListener(ActionListener al){ 
-           continuar.addActionListener(al);
+           continuar1.addActionListener(al);
            volver.addActionListener(al);
            menu.addMiActionListener(al);
     }    
