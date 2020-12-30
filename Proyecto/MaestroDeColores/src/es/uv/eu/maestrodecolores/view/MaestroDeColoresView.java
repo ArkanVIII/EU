@@ -19,8 +19,7 @@ public class MaestroDeColoresView extends JFrame{
     private MaestroP3 p3=new MaestroP3();
     private MaestroP4 p4=new MaestroP4();
     public MaestroDeColoresView(){
-        //this.visualizarP1();
-        p4.setVisible(true);
+        this.visualizarP1();
         
     }
     
@@ -49,6 +48,11 @@ public class MaestroDeColoresView extends JFrame{
     public void visualizarP2desdeP3(){
         p3.setVisible(false);
         p2.setVisible(true);
+    }
+    
+    public void visualizarP4(){
+        p3.setVisible(false);
+        p4.setVisible(true);
     }
     
     public void boton8select(){

@@ -51,6 +51,10 @@ public class MaestroDeColoresController {
                 case "VisualizarP1":
                     vista.visualizarP1();
                     break;
+                    
+                case "VisualizarP4":
+                    vista.visualizarP4();
+                    break;
                    
                 //CASOS PARA PINTAR DE ROJO LOS BOTONES SELECCIONADOS EN LOS AJUSTES DE LA PARTIDA
                 case "8":

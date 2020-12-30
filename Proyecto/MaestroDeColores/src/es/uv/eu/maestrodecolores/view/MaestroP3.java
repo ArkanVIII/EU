@@ -118,7 +118,7 @@ public class MaestroP3 extends JFrame{
         reset.setPreferredSize(new Dimension(125,40));
         continuar = new JButton("Continuar");
         continuar.setPreferredSize(new Dimension(125,40));
-        continuar.setActionCommand("VisualizarP3");
+        continuar.setActionCommand("VisualizarP4");
         
         pbotonesinf.add(volver);
         pbotonesinf.add(reset);
