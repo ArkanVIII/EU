@@ -17,8 +17,10 @@ public class MaestroDeColoresView extends JFrame{
     private MaestroP1 p1=new MaestroP1();
     private MaestroP2 p2=new MaestroP2();
     private MaestroP3 p3=new MaestroP3();
+    private MaestroP4 p4=new MaestroP4();
     public MaestroDeColoresView(){
-        this.visualizarP1();
+        //this.visualizarP1();
+        p4.setVisible(true);
         
     }
     
@@ -26,6 +28,7 @@ public class MaestroDeColoresView extends JFrame{
         p1.addMiActionListener(al);
         p2.addMiActionListener(al);
         p3.addMiActionListener(al);
+        p4.addMiActionListener(al);
     }
     
     public void visualizarP1(){
@@ -78,5 +81,18 @@ public class MaestroDeColoresView extends JFrame{
         p3.setNombreJ1(nombre);
     }
     
+    public void getObjetoCombo(int j){
+        int i = p3.getObjetoCombo(j);
+        p3.setColorBot(i, j);
+    }
+    /*
+    public void getColores(int j){
+        p3.getColores(j);
+    }
+    */
     
+    public void getNumColores(){
+        int i = p2.getNumColores();
+        p3.setNumColores(i); 
+    }
 }

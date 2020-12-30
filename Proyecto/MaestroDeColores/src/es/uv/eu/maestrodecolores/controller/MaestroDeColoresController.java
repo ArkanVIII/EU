@@ -45,6 +45,7 @@ public class MaestroDeColoresController {
                 case "VisualizarP3":
                     vista.visualizarP3();
                     vista.getNombreJ1();
+                    vista.getNumColores();
                     break;
                     
                 case "VisualizarP1":
@@ -70,8 +71,25 @@ public class MaestroDeColoresController {
                 case "10":
                     vista.boton10select();
                     break;
-                    
                 
+                //ASIGNACION DE COLORES DE LA PANTALLA 3    
+                case "ComboBox1":
+                    vista.getObjetoCombo(1);
+                    //vista.getColores(1);
+                    break;
+                case "ComboBox2":
+                    vista.getObjetoCombo(2);
+                    //vista.getColores(2);
+                    break;
+                case "ComboBox3":
+                    vista.getObjetoCombo(3);
+                    //vista.getColores(3);
+                    break;
+                case "ComboBox4":
+                    vista.getObjetoCombo(4);
+                    //vista.getColores(4);
+                    break;
+                    
             }
         }
     }

@@ -31,21 +31,29 @@ public class MaestroP3 extends JFrame{
     Color Morado = new Color(153,51,255);
     Color MoradoOscuro = new Color(82,7,122);
     Color AzulOscuro = new Color(39,35,166);
+    Color GrisFondo = new Color(234,231,231);
     
-    private final Color[] colores8 = {Color.RED, Color.BLUE, Color.GREEN, 
+    private final Color[] colores8 = {GrisFondo, Color.RED, Color.BLUE, Color.GREEN, 
         Color.YELLOW, Color.GRAY, Color.ORANGE, Color.BLACK, Color.CYAN};
     
     private final String[] colores80 = {"Sin color", "Rojo", "Azul", "Verde", "Amarillo",
     "Gris", "Naranja", "Negro", "Cyan"};
     
-    private final Color[] colores12 = {Color.RED, Color.BLUE, Color.GREEN, 
+    private final Color[] colores12 = {GrisFondo, Color.RED, Color.BLUE, Color.GREEN, 
         Color.YELLOW, Color.GRAY, Color.ORANGE, Color.BLACK, Color.CYAN,
         Color.MAGENTA, Color.PINK, Color.WHITE, Color.DARK_GRAY};
     
-    private final Color[] colores16 = {Color.RED, Color.BLUE, Color.GREEN, 
+    private final String[] colores120 = {"Sin color", "Rojo", "Azul", "Verde", "Amarillo",
+    "Gris", "Naranja", "Negro", "Cyan", "Magenta", "Rosa", "Blanco", "Gris Ocuro"};
+    
+    private final Color[] colores16 = {GrisFondo, Color.RED, Color.BLUE, Color.GREEN, 
         Color.YELLOW, Color.GRAY, Color.ORANGE, Color.BLACK, Color.CYAN,
         Color.MAGENTA, Color.PINK, Color.WHITE, Color.DARK_GRAY, Color.LIGHT_GRAY,
         Morado, AzulOscuro, MoradoOscuro};
+    
+    private final String[] colores160 = {"Sin color", "Rojo", "Azul", "Verde", "Amarillo",
+    "Gris", "Naranja", "Negro", "Cyan", "Magenta", "Rosa", "Blanco", "Gris Ocuro",
+    "Gris Claro", "Morado", "Azul Oscuro", "Morado Oscuro"};
     
     private JLabel titulo, eligecol;
     private JPanel p, ptitulo, pcolores, pbotones, pcoloresbox, pbotonesinf, rigid;
@@ -79,16 +87,24 @@ public class MaestroP3 extends JFrame{
         color2.setPreferredSize(new Dimension(45,45));
         color3.setPreferredSize(new Dimension(45,45));
         color4.setPreferredSize(new Dimension(45,45));
+        color1.setBackground(GrisFondo);
+        color2.setBackground(GrisFondo);
+        color3.setBackground(GrisFondo);
+        color4.setBackground(GrisFondo);
         pbotones.add(color1);
         pbotones.add(color2);
         pbotones.add(color3);
         pbotones.add(color4);
         pcolores.add(pbotones);
         
-        col1 = new JComboBox(colores80); 
+        col1 = new JComboBox(colores80);
+        col1.setActionCommand("ComboBox1");
         col2 = new JComboBox(colores80);
+        col2.setActionCommand("ComboBox2");
         col3 = new JComboBox(colores80);
+        col3.setActionCommand("ComboBox3");
         col4 = new JComboBox(colores80);
+        col4.setActionCommand("ComboBox4");
         pcoloresbox.add(col1);
         pcoloresbox.add(col2);
         pcoloresbox.add(col3);
@@ -120,10 +136,85 @@ public class MaestroP3 extends JFrame{
            reset.addActionListener(al);
            volver.addActionListener(al);
            menu.addMiActionListener(al);
+           col1.addActionListener(al);
+           col2.addActionListener(al);
+           col3.addActionListener(al);
+           col4.addActionListener(al);
     }
     
     public void setNombreJ1(String nombre){
         titulo.setText("Turno de " + nombre);
     }
     
+    public void setColorBot(int i, int j){
+        if (j == 1)
+            color1.setBackground(colores8[i]);
+        else if (j == 2)
+            color2.setBackground(colores8[i]);
+        else if (j == 3)   
+            color3.setBackground(colores8[i]);
+        else
+            color4.setBackground(colores8[i]);  
+    }
+    
+    public int getObjetoCombo(int j){
+        int i = 0;
+        if (j == 1)
+            i = col1.getSelectedIndex();
+        else if (j == 2)
+            i = col2.getSelectedIndex();
+        else if (j == 3)   
+            i = col3.getSelectedIndex();
+        else
+            i = col4.getSelectedIndex();
+        return i;
+    }
+    /*
+    public void getColores(int j){
+        int i,k,n;
+        if (j == 1){
+            i = col1.getSelectedIndex();
+            k = col2.getSelectedIndex();
+            n = col3.getSelectedIndex();
+            
+            col2.removeItemAt(i);
+            col3.removeItemAt(i);
+            col4.removeItemAt(i);
+        }       
+        else if (j == 2){
+            i = col2.getSelectedIndex();
+            col1.removeItemAt(i);
+            col3.removeItemAt(i);
+            col4.removeItemAt(i);
+        }
+            
+        else if (j == 3){
+            i = col3.getSelectedIndex();  
+            col1.removeItemAt(i);
+            col2.removeItemAt(i);
+            col4.removeItemAt(i);
+        }   
+            
+        else{
+            i = col4.getSelectedIndex();
+            col1.removeItemAt(i);
+            col2.removeItemAt(i);
+            col3.removeItemAt(i);
+        }
+            
+    }
+    */
+    
+    public String[] setNumColores(int i){
+        if (i == 8){
+            return colores80;
+        }
+        else if(i == 12){
+            return colores120;
+        }
+        else{
+            return colores160;
+        }
+     
+    }
 }

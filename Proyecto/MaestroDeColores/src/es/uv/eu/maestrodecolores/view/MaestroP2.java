@@ -192,4 +192,17 @@ public class MaestroP2 extends JFrame{
         nombre = nombre1.getText();
         return nombre;
     }
+    
+    public int getNumColores(){
+        int i;
+        
+        if (botonescol[0].getBackground() == Color.red)
+           i = 8;
+        else if (botonescol[1].getBackground() == Color.red)
+           i = 12;
+        else 
+           i = 16;
+        
+        return i;
+    }
 }
