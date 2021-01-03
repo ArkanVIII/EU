@@ -62,7 +62,7 @@ public class MaestroP3 extends JFrame{
     
     private JLabel titulo, eligecol, aviso;
     private JPanel p, plabels, pcolores, pbotones, pcoloresbox, pbotonesinf, rigid;
-    private JComboBox col1, col2, col3, col4;
+    private JComboBox col1, col2, col3, col4, colaux=new JComboBox(colores80);
     private JButton color1, color2, color3, color4, volver, reset, continuar;
     
     public MaestroP3(){
@@ -124,9 +124,10 @@ public class MaestroP3 extends JFrame{
         
         volver = new JButton("Volver");
         volver.setPreferredSize(new Dimension(125,40));
-        volver.setActionCommand("VisualizarP2desdeP3");
+        volver.setActionCommand("VisualizarP2");
         reset = new JButton("Reset");
         reset.setPreferredSize(new Dimension(125,40));
+        reset.setActionCommand("ResetP3");
         continuar = new JButton("Continuar");
         continuar.setPreferredSize(new Dimension(125,40));
         continuar.setActionCommand("VisualizarP4");
@@ -273,7 +274,7 @@ public class MaestroP3 extends JFrame{
                 }
                 break;
         }
-    }      
+    }        
     
     public String[] setNumColores(int i){
         if (i == 8){
@@ -286,5 +287,42 @@ public class MaestroP3 extends JFrame{
             return colores160;
         }
      
+    }
+    
+    public void resetP3(){
+        k=0;
+        color1.setBackground(colores8[0]);
+        color2.setBackground(colores8[0]);
+        color3.setBackground(colores8[0]);
+        color4.setBackground(colores8[0]);
+        
+        col1.removeAllItems();
+        col2.removeAll();
+        col3.removeAllItems();
+        col4.removeAll();
+        
+        
+        
+        /*for(int i=0;i<9;i++){
+            col1.addItem(colores80[i]);
+            col2.addItem(colores80[i]);
+            col3.addItem(colores80[i]);
+            col4.addItem(colores80[i]);
+        }*/
+        
+        /*col1=new JComboBox(colores80);
+        col2=new JComboBox(colores80);
+        col3=new JComboBox(colores80);
+        col4=new JComboBox(colores80);*/
+        
+        //col4=colaux;
+        //col1.setSelectedIndex(0);
+        /*col1.setSelectedItem("Sin color");
+        col2=colaux;
+        col2.setSelectedIndex(0);
+        col3=colaux;
+        col3.setSelectedIndex(0);
+        col4=colaux;
+        col4.setSelectedIndex(0);*/
     }
 }

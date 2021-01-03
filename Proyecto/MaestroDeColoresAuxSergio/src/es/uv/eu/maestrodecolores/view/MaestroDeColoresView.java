@@ -31,29 +31,37 @@ public class MaestroDeColoresView extends JFrame{
     }
     
     public void visualizarP1(){
+        p1.setVisible(true);
         p2.setVisible(false);
-        p1.setVisible(true);    
+        p3.setVisible(false);
+        p4.setVisible(false);
     }
     
     public void visualizarP2(){
         p1.setVisible(false);
         p2.setVisible(true);
+        p3.setVisible(false);
+        p4.setVisible(false);
     }
     
     public void visualizarP3(){
+        p1.setVisible(false);
         p2.setVisible(false);
         p3.setVisible(true);
-    }
-    
-    public void visualizarP2desdeP3(){
-        p3.setVisible(false);
-        p2.setVisible(true);
+        p4.setVisible(false);
     }
     
     public void visualizarP4(){
+        p1.setVisible(false);
+        p2.setVisible(false);
         p3.setVisible(false);
         p4.setVisible(true);
     }
+    
+    /*public void visualizarP2desdeP3(){
+        p3.setVisible(false);
+        p2.setVisible(true);
+    }*/
     
     public void boton8select(){
         p2.boton8select();
@@ -85,18 +93,19 @@ public class MaestroDeColoresView extends JFrame{
         p3.setNombreJ1(nombre);
     }
     
+    public void getNumColores(){
+        int i = p2.getNumColores();
+        p3.setNumColores(i); 
+    }
+    
     public void getObjetoCombo(int j){
         int i = p3.getObjetoCombo(j);
         p3.setColorBot(i, j);
     }
     
-    public void getColores(int j){
-        //p3.getColores(j);
+    public void resetP3(){
+        p3.resetP3();
     }
     
     
-    public void getNumColores(){
-        int i = p2.getNumColores();
-        p3.setNumColores(i); 
-    }
 }
