@@ -40,17 +40,21 @@ public class MaestroP4 extends JFrame{
     private final String[] colores80 = {"Sin color", "Rojo", "Azul", "Verde", "Amarillo",
     "Gris", "Naranja", "Negro", "Cyan"};
     
-    private JPanel p, pizq, pinf;
+    private JPanel p, pizq, pcentro, pder, pinf;
     private JComboBox col1, col2, col3, col4;
     private JButton comprobar;
+    private JButton[] botGrandes = new JButton[20];
+    private JButton[] botPequenyos = new JButton[20];
     
     public MaestroP4(){
         this.setLayout(new BorderLayout());
         this.setBounds(650, 350, 600, 450);
         
         menu=new MaestroMenus(1);
-        p = new JPanel(new BorderLayout()); 
+        p = new JPanel(new BorderLayout(25,25)); 
         pizq = new JPanel(new GridLayout(4,1,5,5));
+        pcentro = new JPanel(new GridLayout(5,4,10,10));
+        pder = new JPanel(new GridLayout(5,4,15,37));
         pinf = new JPanel(new FlowLayout());
         
         col1 = new JComboBox(colores80);
@@ -67,68 +71,72 @@ public class MaestroP4 extends JFrame{
         pizq.add(col3);
         pizq.add(col4);
         
+        for(int i = 0; i<20; i++){
+            botGrandes[i] = new JButton();
+            pcentro.add(botGrandes[i]);
+        }
+        
+        for(int i = 0; i<20; i++){
+            botPequenyos[i] = new JButton();
+            pder.add(botPequenyos[i]);
+        }
+        
         comprobar = new JButton("Comprobar");
         comprobar.setPreferredSize(new Dimension(175,40));
         pinf.add(comprobar);
         
         p.add(pizq, BorderLayout.WEST);
-        p.add(new PanelCirculosGrandes());
-        p.add(new PanelCirculosGrandes());
+        p.add(pcentro, BorderLayout.CENTER);
+        p.add(pder, BorderLayout.EAST);
         p.add(pinf, BorderLayout.SOUTH);
         
         this.add(p);
         
         this.add(menu, BorderLayout.NORTH);
     }
-    
-    public class PanelCirculosGrandes extends JPanel{
-        @Override
-        public void paintComponent(Graphics g){
-            
-            int y = 20;
-            for (int i = 0; i < 5; i++){
-                int x = 120;
-                for (int j = 0; j < 4; j++){
-                    g.drawOval(x, y, 40, 40);
-                    x = x + 50;  
-                }
-                y = y + 50;
-            }
-            
-            y = 35;
-            for (int i = 0; i < 5; i++){
-                int x = 360;
-                for (int j = 0; j < 4; j++){
-                    g.drawOval(x, y, 10, 10);
-                    x = x + 20;  
-                }
-                y = y + 50;
-            }
-        }
-    }
-    /*
-    public class PanelCirculosPequeños extends JPanel{
-        @Override
-        public void paintComponent(Graphics g){
-            
-            int y = 40;
-            for (int i = 0; i < 5; i++){
-                int x = 200;
-                for (int j = 0; j < 4; j++){
-                    g.drawOval(x, y, 5, 5);
-                    x = x + 30;  
-                }
-                y = y + 30;
-            }
-        }
-    }
-    */
+
     public void addMiActionListener(ActionListener al){
-           
            menu.addMiActionListener(al);
-           col1.addActionListener(al);
-           col2.addActionListener(al);
-           col3.addActionListener(al);
-           col4.addActionListener(al);
+           comprobar.addActionListener(al);
+    }
+    
+    public void pintar(int cont){
+        if (cont == 1){
+            botGrandes[16].setBackground(colores8[col1.getSelectedIndex()]);
+            botGrandes[17].setBackground(colores8[col2.getSelectedIndex()]);
+            botGrandes[18].setBackground(colores8[col3.getSelectedIndex()]);
+            botGrandes[19].setBackground(colores8[col4.getSelectedIndex()]);
+        }
+        else if (cont == 2){
+            botGrandes[12].setBackground(colores8[col1.getSelectedIndex()]);
+            botGrandes[13].setBackground(colores8[col2.getSelectedIndex()]);
+            botGrandes[14].setBackground(colores8[col3.getSelectedIndex()]);
+            botGrandes[15].setBackground(colores8[col4.getSelectedIndex()]);
+        }
+        else if (cont == 3){
+            botGrandes[8].setBackground(colores8[col1.getSelectedIndex()]);
+            botGrandes[9].setBackground(colores8[col2.getSelectedIndex()]);
+            botGrandes[10].setBackground(colores8[col3.getSelectedIndex()]);
+            botGrandes[11].setBackground(colores8[col4.getSelectedIndex()]);
+        }
+        else if (cont == 4){
+            botGrandes[4].setBackground(colores8[col1.getSelectedIndex()]);
+            botGrandes[5].setBackground(colores8[col2.getSelectedIndex()]);
+            botGrandes[6].setBackground(colores8[col3.getSelectedIndex()]);
+            botGrandes[7].setBackground(colores8[col4.getSelectedIndex()]);
+        }
+        else{
+            botGrandes[0].setBackground(colores8[col1.getSelectedIndex()]);
+            botGrandes[1].setBackground(colores8[col2.getSelectedIndex()]);
+            botGrandes[2].setBackground(colores8[col3.getSelectedIndex()]);
+            botGrandes[3].setBackground(colores8[col4.getSelectedIndex()]);
+        }
+    }
+    
+    public void resetCombo(){
+        col1.setSelectedIndex(0);
+        col2.setSelectedIndex(0);
+        col3.setSelectedIndex(0);
+        col4.setSelectedIndex(0);
     }
 }

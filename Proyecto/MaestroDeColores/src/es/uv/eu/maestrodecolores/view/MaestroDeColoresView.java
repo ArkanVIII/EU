@@ -99,4 +99,11 @@ public class MaestroDeColoresView extends JFrame{
         int i = p2.getNumColores();
         p3.setNumColores(i); 
     }
+    public void pintar(int contador){
+        p4.pintar(contador);
+    }
+    public void resetCombo(){
+        p4.resetCombo();
+    }
+    
 }

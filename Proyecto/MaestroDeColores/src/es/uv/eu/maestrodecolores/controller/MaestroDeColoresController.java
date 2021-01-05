@@ -17,6 +17,7 @@ import java.awt.event.ActionListener;
 public class MaestroDeColoresController {
     private MaestroDeColoresView vista;
     private MaestroDeColoresModel modelo;
+    private int contador = 1;
     
     public MaestroDeColoresController(MaestroDeColoresView v, MaestroDeColoresModel m){
         vista=v;
@@ -93,7 +94,11 @@ public class MaestroDeColoresController {
                     vista.getObjetoCombo(4);
                     vista.getColores(4);
                     break;
-                    
+                 
+                case "Comprobar":
+                    vista.pintar(contador);
+                    vista.resetCombo();
+                    contador++;
             }
         }
     }
