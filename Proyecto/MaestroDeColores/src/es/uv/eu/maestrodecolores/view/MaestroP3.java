@@ -44,7 +44,7 @@ public class MaestroP3 extends JFrame{
     private final String[] colores80 = {"Sin color", "Amarillo", "Azul", "Cyan", "Gris",
     "Naranja", "Negro", "Rojo", "Verde"};
     
-    private final Color[] colores12 = {GrisFondo, Color.RED, Color.BLUE, Color.GREEN, 
+    /*private final Color[] colores12 = {GrisFondo, Color.RED, Color.BLUE, Color.GREEN, 
         Color.YELLOW, Color.GRAY, Color.ORANGE, Color.BLACK, Color.CYAN,
         Color.MAGENTA, Color.PINK, Color.WHITE, Color.DARK_GRAY};
     
@@ -58,7 +58,7 @@ public class MaestroP3 extends JFrame{
     
     private final String[] colores160 = {"Sin color", "Rojo", "Azul", "Verde", "Amarillo",
     "Gris", "Naranja", "Negro", "Cyan", "Magenta", "Rosa", "Blanco", "Gris Ocuro",
-    "Gris Claro", "Morado", "Azul Oscuro", "Morado Oscuro"};
+    "Gris Claro", "Morado", "Azul Oscuro", "Morado Oscuro"};*/
     
     private JLabel titulo, eligecol, aviso;
     private JPanel p, plabels, pcolores, pbotones, pcoloresbox, pbotonesinf, rigid;
@@ -109,13 +109,13 @@ public class MaestroP3 extends JFrame{
         pcolores.add(pbotones);
         
         col1 = new JComboBox(colores80);
-        col1.setActionCommand("ComboBox1");
+        col1.setActionCommand("ComboBoxP3.1");
         col2 = new JComboBox(colores80);
-        col2.setActionCommand("ComboBox2");
+        col2.setActionCommand("ComboBoxP3.2");
         col3 = new JComboBox(colores80);
-        col3.setActionCommand("ComboBox3");
+        col3.setActionCommand("ComboBoxP3.3");
         col4 = new JComboBox(colores80);
-        col4.setActionCommand("ComboBox4");
+        col4.setActionCommand("ComboBoxP3.4");
         pcoloresbox.add(col1);
         pcoloresbox.add(col2);
         pcoloresbox.add(col3);
@@ -124,9 +124,10 @@ public class MaestroP3 extends JFrame{
         
         volver = new JButton("Volver");
         volver.setPreferredSize(new Dimension(125,40));
-        volver.setActionCommand("VisualizarP2desdeP3");
+        volver.setActionCommand("VisualizarP2");
         reset = new JButton("Reset");
         reset.setPreferredSize(new Dimension(125,40));
+        reset.setActionCommand("ResetP3");
         continuar = new JButton("Continuar");
         continuar.setPreferredSize(new Dimension(125,40));
         continuar.setActionCommand("VisualizarP4");
@@ -158,51 +159,17 @@ public class MaestroP3 extends JFrame{
     }
     
     public void setColorBot(int i, int j){
-        System.out.println("SCB/ i: "+i+" j: "+j+" k: "+k);
-        if (j == 1){
-            if(k==1)
-                color1.setBackground(colores8[i]);
-            else if(k==2)
-                color1.setBackground(colores7[i]);
-            else if(k==3)
-                color1.setBackground(colores6[i]);
-            else
-                color1.setBackground(colores5[i]);
-        }
-            
-        else if (j == 2){
-            if(k==1)
-                color2.setBackground(colores8[i]);
-            else if(k==2)
-                color2.setBackground(colores7[i]);
-            else if(k==3)
-                color2.setBackground(colores6[i]);
-            else
-                color2.setBackground(colores5[i]);
-        }
-        else if (j == 3){
-            if(k==1)
-                color3.setBackground(colores8[i]);
-            else if(k==2)
-                color3.setBackground(colores7[i]);
-            else if(k==3)
-                color3.setBackground(colores6[i]);
-            else
-                color3.setBackground(colores5[i]);
-        }
+        if (j == 1)
+            color1.setBackground(colores8[i]);   
+        else if (j == 2)
+            color2.setBackground(colores7[i]);  
+        else if (j == 3)
+            color3.setBackground(colores6[i]);
         else
-            if(k==1)
-                color4.setBackground(colores8[i]);
-            else if(k==2)
-                color4.setBackground(colores7[i]);
-            else if(k==3)
-                color4.setBackground(colores6[i]);
-            else
-                color4.setBackground(colores5[i]); 
+            color4.setBackground(colores5[i]); 
     }
     
     public int getObjetoCombo(int j){
-        System.out.println("k: "+k);
         int i = 0;
         switch(j){
             case 1:
@@ -210,30 +177,23 @@ public class MaestroP3 extends JFrame{
                 col2.removeItemAt(i);
                 col3.removeItemAt(i);
                 col4.removeItemAt(i);
-                
                 break;
+                
             case 2:
                 i = col2.getSelectedIndex();
-                //col1.removeItemAt(i);
                 col3.removeItemAt(i);
                 col4.removeItemAt(i);
                 break;
+                
             case 3:
                 i = col3.getSelectedIndex();
-                //col1.removeItemAt(i);
-                //col2.removeItemAt(i);
                 col4.removeItemAt(i);
                 break;
+                
             case 4:
                 i = col4.getSelectedIndex();
-                //col1.removeItemAt(i);
-                //col2.removeItemAt(i);
-                //col3.removeItemAt(i);
         }
         this.refreshColores8(i);
-        //this.refreshColores80(i);
-        System.out.println("i: "+i);
-        
         k++;
         return i;
     }
@@ -275,7 +235,7 @@ public class MaestroP3 extends JFrame{
         }
     }      
     
-    public String[] setNumColores(int i){
+    /*public String[] setNumColores(int i){
         if (i == 8){
             return colores80;
         }
@@ -286,5 +246,18 @@ public class MaestroP3 extends JFrame{
             return colores160;
         }
      
+    }*/
+    
+    public void resetP3(){
+        k=0;
+        color1.setBackground(colores8[0]);
+        color2.setBackground(colores8[0]);
+        color3.setBackground(colores8[0]);
+        color4.setBackground(colores8[0]);
+        
+        /*Falta resetear los JComboBox, no me preguntes 
+        como porque nada de lo que hacia funciona.*/
+         
     }
 }
+

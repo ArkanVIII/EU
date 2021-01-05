@@ -58,11 +58,6 @@ public class MaestroDeColoresView extends JFrame{
         p4.setVisible(true);
     }
     
-    /*public void visualizarP2desdeP3(){
-        p3.setVisible(false);
-        p2.setVisible(true);
-    }*/
-    
     public void boton8select(){
         p2.boton8select();
     }
@@ -95,7 +90,7 @@ public class MaestroDeColoresView extends JFrame{
     
     public void getNumColores(){
         int i = p2.getNumColores();
-        p3.setNumColores(i); 
+        //p3.setNumColores(i); 
     }
     
     public void getObjetoCombo(int j){
@@ -107,5 +102,11 @@ public class MaestroDeColoresView extends JFrame{
         p3.resetP3();
     }
     
+    public void pintar(int contador){
+        p4.pintar(contador);
+    }
     
+    public void resetCombo(){
+        p4.resetCombo();
+    }
 }

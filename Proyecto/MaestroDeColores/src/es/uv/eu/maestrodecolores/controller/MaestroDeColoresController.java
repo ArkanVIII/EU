@@ -34,23 +34,20 @@ public class MaestroDeColoresController {
                 case "Salir":
                     System.exit(0);
                     break;
+                    
                 // CAMBIOS DE PANTALLA CON LOS BOTONES    
+                case "VisualizarP1":
+                    vista.visualizarP1();
+                    break;    
+                
                 case "VisualizarP2":
                     vista.visualizarP2();
-                    break;
-                    
-                case "VisualizarP2desdeP3":
-                    vista.visualizarP2desdeP3();
                     break;
                     
                 case "VisualizarP3":
                     vista.visualizarP3();
                     vista.getNombreJ1();
                     vista.getNumColores();
-                    break;
-                    
-                case "VisualizarP1":
-                    vista.visualizarP1();
                     break;
                     
                 case "VisualizarP4":
@@ -78,27 +75,53 @@ public class MaestroDeColoresController {
                     break;
                 
                 //ASIGNACION DE COLORES DE LA PANTALLA 3    
-                case "ComboBox1":
+                case "ComboBoxP3.1":
                     vista.getObjetoCombo(1);
-                    vista.getColores(1);
+                    //vista.getColores(1);
                     break;
-                case "ComboBox2":
+                case "ComboBoxP3.2":
                     vista.getObjetoCombo(2);
-                    vista.getColores(2);
+                    //vista.getColores(2);
                     break;
-                case "ComboBox3":
+                case "ComboBoxP3.3":
                     vista.getObjetoCombo(3);
-                    vista.getColores(3);
+                    //vista.getColores(3);
                     break;
-                case "ComboBox4":
+                case "ComboBoxP3.4":
                     vista.getObjetoCombo(4);
-                    vista.getColores(4);
+                    //vista.getColores(4);
                     break;
-                 
+                    
+                case "ResetP3":
+                    vista.resetP3();
+                    break;
+                
+                case "ComboBoxP4.1":
+                    vista.getObjetoCombo(1);
+                    //vista.getColores(1);
+                    break;
+                case "ComboBoxP4.2":
+                    vista.getObjetoCombo(2);
+                    //vista.getColores(2);
+                    break;
+                case "ComboBoxP4.3":
+                    vista.getObjetoCombo(3);
+                    //vista.getColores(3);
+                    break;
+                case "ComboBoxP4.4":
+                    vista.getObjetoCombo(4);
+                    //vista.getColores(4);
+                    break;
+                    
                 case "Comprobar":
                     vista.pintar(contador);
                     vista.resetCombo();
                     contador++;
+                    break;
+                
+                
+                 
+                
             }
         }
     }

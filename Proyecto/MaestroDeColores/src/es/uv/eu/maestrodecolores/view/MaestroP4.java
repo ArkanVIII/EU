@@ -34,11 +34,16 @@ public class MaestroP4 extends JFrame{
     Color MoradoOscuro = new Color(82,7,122);
     Color AzulOscuro = new Color(39,35,166);
     Color GrisFondo = new Color(234,231,231);
-    private final Color[] colores8 = {GrisFondo, Color.RED, Color.BLUE, Color.GREEN, 
-        Color.YELLOW, Color.GRAY, Color.ORANGE, Color.BLACK, Color.CYAN};
     
-    private final String[] colores80 = {"Sin color", "Rojo", "Azul", "Verde", "Amarillo",
-    "Gris", "Naranja", "Negro", "Cyan"};
+    private final Color[] colores8 = {GrisFondo, Color.YELLOW, Color.BLUE, Color.CYAN, 
+        Color.GRAY, Color.ORANGE, Color.BLACK, Color.RED, Color.GREEN};
+    
+    private final Color[] colores7 = new Color[8];
+    private final Color[] colores6 = new Color[7];
+    private final Color[] colores5 = new Color[6];
+    
+    private final String[] colores80 = {"Sin color", "Amarillo", "Azul", "Cyan", "Gris",
+    "Naranja", "Negro", "Rojo", "Verde"};
     
     private JPanel p, pizq, pcentro, pder, pinf;
     private JComboBox col1, col2, col3, col4;

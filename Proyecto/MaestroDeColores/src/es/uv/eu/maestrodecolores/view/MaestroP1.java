@@ -32,7 +32,6 @@ public class MaestroP1 extends JFrame{
         menu=new MaestroMenus(1);
         
         p=new JPanel();
-        //p.setLayout(new BoxLayout(p, BoxLayout.Y_AXIS));
         p.setLayout(new GridLayout(4,1,4,4));
         p1=new JPanel(new FlowLayout());
         p2=new JPanel(new FlowLayout());
