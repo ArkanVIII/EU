@@ -27,11 +27,12 @@ public class MaestroP1 extends JFrame{
     private JButton jj, jr, js;
     public MaestroP1(){
         this.setLayout(new BorderLayout());
-        this.setBounds(650, 350, 600, 450);
+        this.setBounds(650, 350, 600, 475);
         
         menu=new MaestroMenus(1);
         
         p=new JPanel();
+        //p.setLayout(new BoxLayout(p, BoxLayout.Y_AXIS));
         p.setLayout(new GridLayout(4,1,4,4));
         p1=new JPanel(new FlowLayout());
         p2=new JPanel(new FlowLayout());

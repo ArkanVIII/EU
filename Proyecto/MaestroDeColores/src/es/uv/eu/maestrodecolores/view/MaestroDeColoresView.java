@@ -5,7 +5,6 @@
  */
 package es.uv.eu.maestrodecolores.view;
 
-import java.awt.Color;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 
@@ -93,20 +92,25 @@ public class MaestroDeColoresView extends JFrame{
         //p3.setNumColores(i); 
     }
     
-    public void getObjetoCombo(int j){
-        int i = p3.getObjetoCombo(j);
-        p3.setColorBot(i, j);
+    public void pintarSecuenciaP3(int i){
+        p3.pintarSecuenciaP3(i);
     }
     
     public void resetP3(){
         p3.resetP3();
     }
+    
 
-    public void pintar(int contador){
-        p4.pintar(contador);
+    
+    public void pintarSecuenciaP4(int i){
+        p4.pintarSecuenciaP4(i);
     }
     
-    public void resetCombo(){
-        p4.resetCombo();
+    public void resetP4(){
+        p4.resetP4();
+    }
+    
+    public boolean comporbarSecuenciaP4(){
+        return p4.comporobarSecuenciaP4(p3.getSecuenciaP3());
     }
 }

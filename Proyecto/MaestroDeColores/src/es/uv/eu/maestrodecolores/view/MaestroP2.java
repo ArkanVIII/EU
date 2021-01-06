@@ -37,7 +37,7 @@ public class MaestroP2 extends JFrame{
 
     public MaestroP2(){
         this.setLayout(new BorderLayout());
-        this.setBounds(650, 350, 600, 450);
+        this.setBounds(650, 350, 600, 475);
         
         menu=new MaestroMenus(1);
         // CREACION DE LOS PANELES DONDE SE DISTRIBUYEN LOS COMPONENTES

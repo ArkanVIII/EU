@@ -12,69 +12,52 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
-import javax.swing.Box;
-import javax.swing.BoxLayout;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
 /**
  *
  * @author danie
  */
 public class MaestroP3 extends JFrame{
-    private int k = 0;
+    private int k = 1;
     private MaestroMenus menu;
-    private MaestroDeColoresView vista;
     Color Morado = new Color(153,51,255);
     Color MoradoOscuro = new Color(82,7,122);
     Color AzulOscuro = new Color(39,35,166);
     Color GrisFondo = new Color(234,231,231);
     
-    private final Color[] colores8 = {GrisFondo, Color.YELLOW, Color.BLUE, Color.CYAN, 
+    private final Color[] colores8 = {Color.YELLOW, Color.BLUE, Color.CYAN, 
         Color.GRAY, Color.ORANGE, Color.BLACK, Color.RED, Color.GREEN};
     
-    private final Color[] colores7 = new Color[8];
-    private final Color[] colores6 = new Color[7];
-    private final Color[] colores5 = new Color[6];
-    
-    private final String[] colores80 = {"Sin color", "Amarillo", "Azul", "Cyan", "Gris",
-    "Naranja", "Negro", "Rojo", "Verde"};
-    
-    /*private final Color[] colores12 = {GrisFondo, Color.RED, Color.BLUE, Color.GREEN, 
+    /*private final Color[] colores12 = {Color.RED, Color.BLUE, Color.GREEN, 
         Color.YELLOW, Color.GRAY, Color.ORANGE, Color.BLACK, Color.CYAN,
         Color.MAGENTA, Color.PINK, Color.WHITE, Color.DARK_GRAY};
     
-    private final String[] colores120 = {"Sin color", "Rojo", "Azul", "Verde", "Amarillo",
-    "Gris", "Naranja", "Negro", "Cyan", "Magenta", "Rosa", "Blanco", "Gris Ocuro"};
-    
-    private final Color[] colores16 = {GrisFondo, Color.RED, Color.BLUE, Color.GREEN, 
+    private final Color[] colores16 = {Color.RED, Color.BLUE, Color.GREEN, 
         Color.YELLOW, Color.GRAY, Color.ORANGE, Color.BLACK, Color.CYAN,
         Color.MAGENTA, Color.PINK, Color.WHITE, Color.DARK_GRAY, Color.LIGHT_GRAY,
-        Morado, AzulOscuro, MoradoOscuro};
+        Morado, AzulOscuro, MoradoOscuro};*/
     
-    private final String[] colores160 = {"Sin color", "Rojo", "Azul", "Verde", "Amarillo",
-    "Gris", "Naranja", "Negro", "Cyan", "Magenta", "Rosa", "Blanco", "Gris Ocuro",
-    "Gris Claro", "Morado", "Azul Oscuro", "Morado Oscuro"};*/
-    
-    private JLabel titulo, eligecol, aviso;
-    private JPanel p, plabels, pcolores, pbotones, pcoloresbox, pbotonesinf, rigid;
-    private JComboBox col1, col2, col3, col4;
+    private final Color[] secuenciaP3 = new Color[4];
+    private final JButton[] bcol = new JButton[8];
+    private final String[] comandos = {"BcolP3.1", "BcolP3.2", "BcolP3.3", "BcolP3.4",
+    "BcolP3.5", "BcolP3.6", "BcolP3.7", "BcolP3.8"};
+    private JLabel titulo, eligecol;
+    private JPanel p, plabels, pcolores, pbotones, pcoloresbox, pbotonesinf;
     private JButton color1, color2, color3, color4, volver, reset, continuar;
     
     public MaestroP3(){
         this.setLayout(new BorderLayout());
-        this.setBounds(650, 350, 600, 450);
+        this.setBounds(650, 350, 600, 475);
         
         menu=new MaestroMenus(1);
         p = new JPanel(new GridLayout(4,1,0,0));
-        plabels = new JPanel(new GridLayout(2,1,0,0));
-        pcolores = new JPanel(new GridLayout(2,1,10,0));
+        plabels = new JPanel(new GridLayout(1,1,0,0));
+        pcolores = new JPanel(new GridLayout(2,1,10,10));
         pbotones = new JPanel(new FlowLayout(FlowLayout.CENTER,25,0));
-        pcoloresbox = new JPanel(new FlowLayout(FlowLayout.CENTER,10,15));
+        pcoloresbox = new JPanel(new FlowLayout(FlowLayout.CENTER,10,0));
         pbotonesinf = new JPanel(new FlowLayout(FlowLayout.CENTER,10,45));
         
         titulo = new JLabel("Turno de Jugador 1", JLabel.CENTER);
@@ -84,10 +67,6 @@ public class MaestroP3 extends JFrame{
         eligecol = new JLabel("Elige tu combinación colores: ", JLabel.CENTER);
         eligecol.setFont(new Font("Serif", Font.PLAIN, 15));
         plabels.add(eligecol);
-        
-        aviso = new JLabel("AVISO: Elige de izquierda a derecha, en caso de algun inconveniente pulse reset.", JLabel.CENTER);
-        aviso.setFont(new Font("Serif", Font.PLAIN, 15));
-        plabels.add(aviso);
         p.add(plabels);
         
         color1 = new JButton();
@@ -108,18 +87,14 @@ public class MaestroP3 extends JFrame{
         pbotones.add(color4);
         pcolores.add(pbotones);
         
-        col1 = new JComboBox(colores80);
-        col1.setActionCommand("ComboBoxP3.1");
-        col2 = new JComboBox(colores80);
-        col2.setActionCommand("ComboBoxP3.2");
-        col3 = new JComboBox(colores80);
-        col3.setActionCommand("ComboBoxP3.3");
-        col4 = new JComboBox(colores80);
-        col4.setActionCommand("ComboBoxP3.4");
-        pcoloresbox.add(col1);
-        pcoloresbox.add(col2);
-        pcoloresbox.add(col3);
-        pcoloresbox.add(col4);
+        for(int i=0;i<8;i++){
+            bcol[i] = new JButton();
+            bcol[i].setPreferredSize(new Dimension(30,30));
+            bcol[i].setBackground(colores8[i]);
+            bcol[i].setActionCommand(comandos[i]);
+            pcoloresbox.add(bcol[i]);
+        }
+        
         pcolores.add(pcoloresbox);
         
         volver = new JButton("Volver");
@@ -148,92 +123,27 @@ public class MaestroP3 extends JFrame{
            reset.addActionListener(al);
            volver.addActionListener(al);
            menu.addMiActionListener(al);
-           col1.addActionListener(al);
-           col2.addActionListener(al);
-           col3.addActionListener(al);
-           col4.addActionListener(al);
+           for(int i=0;i<8;i++){
+               bcol[i].addActionListener(al);
+           }
     }
     
     public void setNombreJ1(String nombre){
         titulo.setText("Turno de " + nombre);
     }
     
-    public void setColorBot(int i, int j){
-        if (j == 1)
-            color1.setBackground(colores8[i]);   
-        else if (j == 2)
-            color2.setBackground(colores7[i]);  
-        else if (j == 3)
-            color3.setBackground(colores6[i]);
+    public void pintarSecuenciaP3(int i){
+        bcol[i].setVisible(false);
+        if (k == 1)
+            color1.setBackground(colores8[i]);
+        else if (k == 2)
+            color2.setBackground(colores8[i]);
+        else if (k == 3)
+            color3.setBackground(colores8[i]);
         else
-            color4.setBackground(colores5[i]); 
-    }
-    
-    public int getObjetoCombo(int j){
-        int i = 0;
-        switch(j){
-            case 1:
-                i = col1.getSelectedIndex();
-                col2.removeItemAt(i);
-                col3.removeItemAt(i);
-                col4.removeItemAt(i);
-                break;
-                
-            case 2:
-                i = col2.getSelectedIndex();
-                col3.removeItemAt(i);
-                col4.removeItemAt(i);
-                break;
-                
-            case 3:
-                i = col3.getSelectedIndex();
-                col4.removeItemAt(i);
-                break;
-                
-            case 4:
-                i = col4.getSelectedIndex();
-        }
-        this.refreshColores8(i);
+            color4.setBackground(colores8[i]);
         k++;
-        return i;
-    }
-    
-    public void refreshColores8(int i){
-        switch(k){
-            case 0:
-                for(int j=0;j<9;j++){
-                if(j!=i){
-                    if(j<i)
-                        colores7[j]=colores8[j];
-                    else
-                        colores7[j-1]=colores8[j];
-                    }
-                }
-                break;
-                    
-            case 1:
-                for(int j=0;j<8;j++){
-                    if(j!=i){
-                        if(j<i)
-                            colores6[j]=colores7[j];
-                        else
-                            colores6[j-1]=colores7[j];
-                    }
-                }
-                break;
-                
-            case 2:
-                for(int j=0;j<7;j++){
-                    if(j!=i){
-                        if(j<i)
-                            colores5[j]=colores6[j];
-                        else
-                            colores5[j-1]=colores6[j];
-                    }
-                }
-                break;
-        }
-    }      
+    }   
     
     /*public String[] setNumColores(int i){
         if (i == 8){
@@ -245,19 +155,24 @@ public class MaestroP3 extends JFrame{
         else{
             return colores160;
         }
-     
     }*/
     
     public void resetP3(){
-        k=0;
-        color1.setBackground(colores8[0]);
-        color2.setBackground(colores8[0]);
-        color3.setBackground(colores8[0]);
-        color4.setBackground(colores8[0]);
-        
-        /*Falta resetear los JComboBox, no me preguntes 
-        como porque nada de lo que hacia funciona.*/
-         
+        k=1;
+        color1.setBackground(GrisFondo);
+        color2.setBackground(GrisFondo);
+        color3.setBackground(GrisFondo);
+        color4.setBackground(GrisFondo);
+        for(int i=0;i<8;i++){
+            bcol[i].setVisible(true);
+        }
+    }
+    
+    public Color[] getSecuenciaP3(){
+        secuenciaP3[0] = color1.getBackground();
+        secuenciaP3[1] = color2.getBackground();
+        secuenciaP3[2] = color3.getBackground();
+        secuenciaP3[3] = color4.getBackground();
+        return secuenciaP3;
     }
 }
-
