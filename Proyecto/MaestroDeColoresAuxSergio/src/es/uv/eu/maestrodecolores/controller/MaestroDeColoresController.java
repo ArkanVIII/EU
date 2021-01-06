@@ -17,7 +17,6 @@ import java.awt.event.ActionListener;
 public class MaestroDeColoresController {
     private MaestroDeColoresView vista;
     private MaestroDeColoresModel modelo;
-    private int contador = 1;
     
     public MaestroDeColoresController(MaestroDeColoresView v, MaestroDeColoresModel m){
         vista=v;
@@ -74,51 +73,72 @@ public class MaestroDeColoresController {
                     vista.boton10select();
                     break;
                 
-                //ASIGNACION DE COLORES DE LA PANTALLA 3    
-                case "ComboBoxP3.1":
-                    vista.getObjetoCombo(1);
-                    //vista.getColores(1);
+                //ASIGNACION DE COLORES DE LA PANTALLA 3
+                case "BcolP3.1":
+                    vista.pintarSecuenciaP3(0);
                     break;
-                case "ComboBoxP3.2":
-                    vista.getObjetoCombo(2);
-                    //vista.getColores(2);
+                case "BcolP3.2":
+                    vista.pintarSecuenciaP3(1);
                     break;
-                case "ComboBoxP3.3":
-                    vista.getObjetoCombo(3);
-                    //vista.getColores(3);
+                case "BcolP3.3":
+                    vista.pintarSecuenciaP3(2);
                     break;
-                case "ComboBoxP3.4":
-                    vista.getObjetoCombo(4);
-                    //vista.getColores(4);
+                case "BcolP3.4":
+                    vista.pintarSecuenciaP3(3);
+                    break;
+                case "BcolP3.5":
+                    vista.pintarSecuenciaP3(4);
+                    break;
+                case "BcolP3.6":
+                    vista.pintarSecuenciaP3(5);
+                    break;
+                case "BcolP3.7":
+                    vista.pintarSecuenciaP3(6);
+                    break;
+                case "BcolP3.8":
+                    vista.pintarSecuenciaP3(7);
                     break;
                     
                 case "ResetP3":
                     vista.resetP3();
                     break;
+                    
+                case "BcolP4.1":
+                    vista.pintarSecuenciaP4(0);
+                    break;
+                case "BcolP4.2":
+                    vista.pintarSecuenciaP4(1);
+                    break;
+                case "BcolP4.3":
+                    vista.pintarSecuenciaP4(2);
+                    break;
+                case "BcolP4.4":
+                    vista.pintarSecuenciaP4(3);
+                    break;
+                case "BcolP4.5":
+                    vista.pintarSecuenciaP4(4);
+                    break;
+                case "BcolP4.6":
+                    vista.pintarSecuenciaP4(5);
+                    break;
+                case "BcolP4.7":
+                    vista.pintarSecuenciaP4(6);
+                    break;
+                case "BcolP4.8":
+                    vista.pintarSecuenciaP4(7);
+                    break;
                 
-                case "ComboBoxP4.1":
-                    vista.getObjetoCombo(1);
-                    //vista.getColores(1);
+                case "ResetP4":
+                    vista.resetP4();
                     break;
-                case "ComboBoxP4.2":
-                    vista.getObjetoCombo(2);
-                    //vista.getColores(2);
+                
+                case "ComprobarP4":
+                    if(vista.comporbarSecuenciaP4()){
+                        System.out.print("Has ganado\n");
+                    }
                     break;
-                case "ComboBoxP4.3":
-                    vista.getObjetoCombo(3);
-                    //vista.getColores(3);
-                    break;
-                case "ComboBoxP4.4":
-                    vista.getObjetoCombo(4);
-                    //vista.getColores(4);
-                    break;
-                    
-                case "Comprobar":
-                    vista.pintar(contador);
-                    vista.resetCombo();
-                    contador++;
-                    break;
-                    
+                
+                
             }
         }
     }
